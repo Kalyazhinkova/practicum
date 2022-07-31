@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Место</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <img src="./images/header-logo.svg" alt="Логотип" class="header__logo"/>
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img src="./images/avatar.png" alt="Аватар" class="profile__avatar">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+            <p class="profile__description">Исследователь океана</p>
+          </div>
+          <button  class="profile__add-button" type="button"></button>
+        </section>
+        <section class="elements">
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+      </footer>
+    </div>
+
+    <div class="popup  popup_profile">
+      <section class="popup__content">
+        <button class="popup__close-button popup__close-button_profile" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="form" name="profile-form" id="profile-form" novalidate>
+          <input type="text" class="form__item" id="name" name="name" value=" " minlength="2" maxlength="40" required>
+          <span class="name-error form__item-error"></span>
+          <input type="text" class="form__item" id="description" name="description" value=" " minlength="2" maxlength="200" required>
+          <span class="description-error form__item-error"></span>
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="popup popup_add">
+      <section class="popup__content">
+        <button class="popup__close-button popup__close-button_add" type="button"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="form" name="add-form" id="add-form" novalidate>
+          <input type="text" class="form__item" id="image-name" name="image__name" placeholder="Название" minlength="2" maxlength="30" required>
+          <span class="image-name-error form__item-error"></span>
+          <input type="url" class="form__item" id="image-link" name="image__link" placeholder="Ссылка на картинку" required>
+          <span class="image-link-error form__item-error"></span>
+          <button type="submit" class="popup__button">Создать</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="popup popup_big">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_big" type="button"></button>
+        <img class="popup__image" alt="Фотография" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg">
+        <p class="popup__image-name"></p>
+      </div>
+    </div>
+
+    <template id="element-template">
+      <article class="element">
+        <img class="element__image" alt="Фотография">
+        <button class="element__trash" type="button"></button>
+        <div class="element__print">
+          <h2 class="element__title"></h2>
+          <button class="element__like" type="button"></button>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
